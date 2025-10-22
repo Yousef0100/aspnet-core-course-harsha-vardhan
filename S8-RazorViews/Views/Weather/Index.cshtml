@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CityWeather>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather Peaking</title>
+		<link href="~/StyleSheet.css" rel="stylesheet"/>
+	</head>
+
+	<body>
+		<div class="page-content">
+			<h1 style="margin: 50px 0px; transform: translate(50%, 0); width: fit-content;"> Weather Home Page</h1>
+		@foreach (CityWeather cityWeather in Model) {
+			<div class="box w-25 margin-bottom blue-back" style="display:flex; flex-direction:row; justify-content: space-between;">
+				<div class="w-50 blue-back">
+					<h1>@cityWeather.CityName</h1>
+					<h6 class="text-dark-grey margin-top">@cityWeather.DateAndTime!.Value.GetDateTimeFormats()[22]</h6>
+					<h6 class="margin-top"><a href="Weather/@cityWeather.CityUniqueCode">Details</a></h6>
+				</div>
+				<div class="vertical-divider"></div>
+				<div class="blue-back" style="align-self: center;">
+					<h2>@cityWeather.TemperatureFahrenheit <text class="text-dark-grey"><sup>°F</sup></text></h2>
+				</div>
+			</div>
+		}
+		</div>
+	</body>
+</html>
