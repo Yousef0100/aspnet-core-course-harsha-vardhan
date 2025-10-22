@@ -4,6 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>S7_ModelBinding_Validations</RootNamespace>
   </PropertyGroup>
 
 </Project>
