@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<CityWeather>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Weather Peaking</title>
-		<link href="~/StyleSheet.css" rel="stylesheet"/>
-	</head>
+@{
+	ViewData["Title"] = "Countries Weather Overview";
+}
 
-	<body>
-		<div class="page-content">
-			<h1 style="margin: 50px 0px; transform: translate(50%, 0); width: fit-content;"> Weather Home Page</h1>
-		@foreach (CityWeather cityWeather in Model) {
-			<div class="box w-25 margin-bottom blue-back" style="display:flex; flex-direction:row; justify-content: space-between;">
-				<div class="w-50 blue-back">
+
+<h1 style="margin: 1rem 0; text-align:center; font-size:8rem">Weather Home Page</h1>
+<div style="display: flex; justify-content: center; flex-direction: row;">
+	<div style="width: 85%; display:flex; flex-flow:row wrap; justify-content: center; align-content: center; gap: 1rem; border-radius: 10px;">
+		@foreach (CityWeather cityWeather in Model)
+		{
+			<div class="box margin-bottom blue-back" style="display:flex; flex-direction:row; justify-content: space-between;">
+				<div class="w-75 blue-back">
 					<h1>@cityWeather.CityName</h1>
 					<h6 class="text-dark-grey margin-top">@cityWeather.DateAndTime!.Value.GetDateTimeFormats()[22]</h6>
 					<h6 class="margin-top"><a href="Weather/@cityWeather.CityUniqueCode">Details</a></h6>
@@ -23,6 +22,5 @@
 				</div>
 			</div>
 		}
-		</div>
-	</body>
-</html>
+	</div>
+</div>

@@ -10,10 +10,9 @@ public class WeatherController : Controller
         new CityWeather("NYC", "New York", Convert.ToDateTime("2030-01-01 3:00"), 60),
         new CityWeather("PAR", "Paris", Convert.ToDateTime("2030-01-01 9:00"), 82),
         new CityWeather("CAI", "Cairo", Convert.ToDateTime("2030-01-01 2:00"), 85),
-        new CityWeather("SSH", "Sharm El Sheikh", Convert.ToDateTime("2030-01-01 2:00"), 84),
+        new CityWeather("SSH", "Sharm", Convert.ToDateTime("2030-01-01 2:00"), 84),
         new CityWeather("DMT", "Damietta", Convert.ToDateTime("2030-01-01 12:00"), 77)
     };
-
 
 
     [HttpGet("/")]
