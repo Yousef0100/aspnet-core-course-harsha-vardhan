@@ -1,0 +1,25 @@
+﻿@model CityWeather
+
+@{
+	ViewData["Title"] = "Country Weather Details";
+}
+
+<div style="display: flex; justify-content: center; flex-direction: column; height: 97vh;">
+	<h1 style="align-self: center; margin-bottom: 2rem; font-size: 4rem;"><span style="color:blueviolet;">@Model.CityName</span> Weather Overview</h1>
+	<div style="width: 100%; display:flex; flex-flow:row wrap; justify-content: center; align-content: center; gap: 1rem; border-radius: 10px;">
+		<div class="box margin-bottom" style="display:flex; flex-direction:row; justify-content: space-between;">
+			<div class="w-75">
+				<h1>@Model.CityName</h1>
+				<h6 class="text-dark-grey margin-top">@Model.DateAndTime!.Value.GetDateTimeFormats()[22]</h6>
+				<h6 class="text-dark-grey margin-top">@Model.DateAndTime!.Value.GetDateTimeFormats()[3]</h6>
+			</div>
+			<div class="vertical-divider"></div>
+			<div class="" style="align-self: center;">
+				<h2>@Model.TemperatureFahrenheit <text class="text-dark-grey"><sup>°F</sup></text></h2>
+			</div>
+		</div>
+	</div>
+	<div style="align-self: center">
+		<h5><a href="/">Back to Weather Home Page</a></h5>
+	</div>
+</div>
