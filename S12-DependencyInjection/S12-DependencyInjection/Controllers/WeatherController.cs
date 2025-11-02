@@ -14,7 +14,7 @@ public class WeatherController : Controller
     }
 
 
-    [HttpGet("/")]
+    [Route("~/weather")]
     public IActionResult Index()
     {
         IEnumerable<CityWeather> weatherList = _weatherService.GetCitiesWeather();
@@ -23,7 +23,7 @@ public class WeatherController : Controller
     }
 
 
-    [HttpGet("weather/{cityCode:alpha}")]
+    [Route("~/weather/{cityCode:alpha}")]
     public IActionResult Details(string cityCode)
     {
         // fetching the details of the city weather where the city code is 'cityCode'
